@@ -1797,7 +1797,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #886939;
+  background: #b382c7;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2968,4 +2968,9 @@ pre .javascript .function {
 }
 .site-title {
   font-family: "Comic Sans MS" !important;
+}
+.local-search-header {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
 }
