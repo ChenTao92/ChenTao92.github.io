@@ -99,7 +99,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ww1.sinaimg.cn/bmiddle/9bd18299gw1f9f5147i48j21kw0sfaeh.jpg">
 <meta property="og:image" content="http://ww4.sinaimg.cn/bmiddle/9bd18299gw1f9f5gee73oj205m02hmx4.jpg">
-<meta property="og:updated_time" content="2017-07-26T06:39:33.000Z">
+<meta property="og:updated_time" content="2017-07-26T10:09:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack的使用与配置">
 <meta name="twitter:description" content="什么是WebpackWebPack可以看做是模块打包器：它做的事情是，分析你的项目结构，找到JavaScript模块以及其它的一些浏览器不能直接运行的拓展语言（Scss，TypeScript等），并将其打包为合适的格式以供浏览器使用。">
@@ -446,10 +446,7 @@
 <h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>1.</p>
 <p><img src="http://ww4.sinaimg.cn/bmiddle/9bd18299gw1f9f5gee73oj205m02hmx4.jpg" alt=""><br>创建两个文件夹分别为<code>dist</code>和<code>src</code>，将源码(开发文件)放在<code>src</code>这个文件夹里，将生产文件放在<code>dist</code>文件夹里。</p>
 <p>2.每个项目下都必须配置有一个<code>webpack.config.js</code>（可以取任意的名字，但是推荐用该配置名），告诉<code>webpack</code>它需要做什么。</p>
-<ol>
-<li><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm init //生成package.json文件，存放依赖</div></pre></td></tr></table></figure>
-</li>
-</ol>
+<p>3.输入<code>npm init</code>指令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm init //生成package.json文件，存放依赖</div></pre></td></tr></table></figure></p>
 <p>4.在安装依赖的时候文件夹中还会多增加一个<code>node_modules</code>的文件夹，里面含有大量的文件，当我们在sublime中添加项目文件夹的时候为了避免因为显示<code>node_modules</code>文件夹而造成卡顿，可以在sublime的<code>preferences-settings-User</code>里面添加下面的配置。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="string">"folder_exclude_patterns"</span>:</div><div class="line">  [</div><div class="line">      <span class="string">"node_modules"</span>,</div><div class="line">  ]</div></pre></td></tr></table></figure></p>
 <p>5.添加<code>.gitignore</code>文件。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">.DS_Store</div><div class="line">node_modules</div></pre></td></tr></table></figure></p>
 <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>首先安装<code>webpack</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --save webpack //项目文件夹安装</div></pre></td></tr></table></figure></p>
