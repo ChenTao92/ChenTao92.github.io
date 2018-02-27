@@ -4,9 +4,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://chentao92.github.io/"/>
+  <link href="https://taylor-chan.github.io/"/>
   <updated>2017-07-26T10:09:30.000Z</updated>
-  <id>https://chentao92.github.io/</id>
+  <id>https://taylor-chan.github.io/</id>
   
   <author>
     <name>taochen</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>webpack的使用与配置</title>
-    <link href="https://chentao92.github.io/2016/11/09/webpack%E7%9A%84%E4%BD%BF%E7%94%A8%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
-    <id>https://chentao92.github.io/2016/11/09/webpack的使用与配置/</id>
+    <link href="https://taylor-chan.github.io/2016/11/09/webpack%E7%9A%84%E4%BD%BF%E7%94%A8%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
+    <id>https://taylor-chan.github.io/2016/11/09/webpack的使用与配置/</id>
     <published>2016-11-09T07:11:43.000Z</published>
     <updated>2017-07-26T10:09:30.000Z</updated>
     
@@ -61,17 +61,17 @@
     
     </summary>
     
-      <category term="front End" scheme="https://chentao92.github.io/categories/front-End/"/>
+      <category term="front End" scheme="https://taylor-chan.github.io/categories/front-End/"/>
     
     
-      <category term="webpack" scheme="https://chentao92.github.io/tags/webpack/"/>
+      <category term="webpack" scheme="https://taylor-chan.github.io/tags/webpack/"/>
     
   </entry>
   
   <entry>
     <title>关于Vim入门的一些小知识以及操作符</title>
-    <link href="https://chentao92.github.io/2016/10/12/Vim%E5%85%A5%E9%97%A8%E7%9F%A5%E8%AF%86/"/>
-    <id>https://chentao92.github.io/2016/10/12/Vim入门知识/</id>
+    <link href="https://taylor-chan.github.io/2016/10/12/Vim%E5%85%A5%E9%97%A8%E7%9F%A5%E8%AF%86/"/>
+    <id>https://taylor-chan.github.io/2016/10/12/Vim入门知识/</id>
     <published>2016-10-12T02:13:41.000Z</published>
     <updated>2017-07-26T06:39:33.000Z</updated>
     
@@ -107,17 +107,17 @@
     
     </summary>
     
-      <category term="front End" scheme="https://chentao92.github.io/categories/front-End/"/>
+      <category term="front End" scheme="https://taylor-chan.github.io/categories/front-End/"/>
     
     
-      <category term="Vim" scheme="https://chentao92.github.io/tags/Vim/"/>
+      <category term="Vim" scheme="https://taylor-chan.github.io/tags/Vim/"/>
     
   </entry>
   
   <entry>
     <title>ubuntu16.04安装deb软件包步骤</title>
-    <link href="https://chentao92.github.io/2016/09/19/ubuntu16.04%E5%AE%89%E8%A3%85deb%E8%BD%AF%E4%BB%B6%E5%8C%85%E6%AD%A5%E9%AA%A4/"/>
-    <id>https://chentao92.github.io/2016/09/19/ubuntu16.04安装deb软件包步骤/</id>
+    <link href="https://taylor-chan.github.io/2016/09/19/ubuntu16.04%E5%AE%89%E8%A3%85deb%E8%BD%AF%E4%BB%B6%E5%8C%85%E6%AD%A5%E9%AA%A4/"/>
+    <id>https://taylor-chan.github.io/2016/09/19/ubuntu16.04安装deb软件包步骤/</id>
     <published>2016-09-19T07:00:58.000Z</published>
     <updated>2017-07-26T06:39:33.000Z</updated>
     
@@ -171,23 +171,23 @@
     
     </summary>
     
-      <category term="Linux" scheme="https://chentao92.github.io/categories/Linux/"/>
+      <category term="Linux" scheme="https://taylor-chan.github.io/categories/Linux/"/>
     
     
-      <category term="ubuntu" scheme="https://chentao92.github.io/tags/ubuntu/"/>
+      <category term="ubuntu" scheme="https://taylor-chan.github.io/tags/ubuntu/"/>
     
-      <category term=".deb" scheme="https://chentao92.github.io/tags/deb/"/>
+      <category term=".deb" scheme="https://taylor-chan.github.io/tags/deb/"/>
     
-      <category term="apt-get" scheme="https://chentao92.github.io/tags/apt-get/"/>
+      <category term="apt-get" scheme="https://taylor-chan.github.io/tags/apt-get/"/>
     
-      <category term="dpkg" scheme="https://chentao92.github.io/tags/dpkg/"/>
+      <category term="dpkg" scheme="https://taylor-chan.github.io/tags/dpkg/"/>
     
   </entry>
   
   <entry>
     <title>浅谈JavaScript异步机制与事件队列</title>
-    <link href="https://chentao92.github.io/2016/09/12/%E6%B5%85%E8%B0%88JavaScript%E5%BC%82%E6%AD%A5%E6%9C%BA%E5%88%B6%E4%B8%8E%E4%BA%8B%E4%BB%B6%E9%98%9F%E5%88%97/"/>
-    <id>https://chentao92.github.io/2016/09/12/浅谈JavaScript异步机制与事件队列/</id>
+    <link href="https://taylor-chan.github.io/2016/09/12/%E6%B5%85%E8%B0%88JavaScript%E5%BC%82%E6%AD%A5%E6%9C%BA%E5%88%B6%E4%B8%8E%E4%BA%8B%E4%BB%B6%E9%98%9F%E5%88%97/"/>
+    <id>https://taylor-chan.github.io/2016/09/12/浅谈JavaScript异步机制与事件队列/</id>
     <published>2016-09-11T22:24:01.000Z</published>
     <updated>2017-07-26T06:39:33.000Z</updated>
     
@@ -215,21 +215,21 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://chentao92.github.io/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://taylor-chan.github.io/categories/JavaScript/"/>
     
     
-      <category term="异步机制" scheme="https://chentao92.github.io/tags/%E5%BC%82%E6%AD%A5%E6%9C%BA%E5%88%B6/"/>
+      <category term="异步机制" scheme="https://taylor-chan.github.io/tags/%E5%BC%82%E6%AD%A5%E6%9C%BA%E5%88%B6/"/>
     
-      <category term="事件队列" scheme="https://chentao92.github.io/tags/%E4%BA%8B%E4%BB%B6%E9%98%9F%E5%88%97/"/>
+      <category term="事件队列" scheme="https://taylor-chan.github.io/tags/%E4%BA%8B%E4%BB%B6%E9%98%9F%E5%88%97/"/>
     
-      <category term="setTimeout" scheme="https://chentao92.github.io/tags/setTimeout/"/>
+      <category term="setTimeout" scheme="https://taylor-chan.github.io/tags/setTimeout/"/>
     
   </entry>
   
   <entry>
     <title>shell知识小记和常用指令</title>
-    <link href="https://chentao92.github.io/2016/09/01/shell%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0%E5%92%8C%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/"/>
-    <id>https://chentao92.github.io/2016/09/01/shell知识小记和常用指令/</id>
+    <link href="https://taylor-chan.github.io/2016/09/01/shell%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0%E5%92%8C%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/"/>
+    <id>https://taylor-chan.github.io/2016/09/01/shell知识小记和常用指令/</id>
     <published>2016-09-01T01:12:42.000Z</published>
     <updated>2017-07-26T06:39:33.000Z</updated>
     
@@ -347,21 +347,21 @@
     
     </summary>
     
-      <category term="Note" scheme="https://chentao92.github.io/categories/Note/"/>
+      <category term="Note" scheme="https://taylor-chan.github.io/categories/Note/"/>
     
     
-      <category term="shell" scheme="https://chentao92.github.io/tags/shell/"/>
+      <category term="shell" scheme="https://taylor-chan.github.io/tags/shell/"/>
     
-      <category term="流与重定向" scheme="https://chentao92.github.io/tags/%E6%B5%81%E4%B8%8E%E9%87%8D%E5%AE%9A%E5%90%91/"/>
+      <category term="流与重定向" scheme="https://taylor-chan.github.io/tags/%E6%B5%81%E4%B8%8E%E9%87%8D%E5%AE%9A%E5%90%91/"/>
     
-      <category term="管道" scheme="https://chentao92.github.io/tags/%E7%AE%A1%E9%81%93/"/>
+      <category term="管道" scheme="https://taylor-chan.github.io/tags/%E7%AE%A1%E9%81%93/"/>
     
   </entry>
   
   <entry>
     <title>Git指令小记</title>
-    <link href="https://chentao92.github.io/2016/08/24/Git%E6%8C%87%E4%BB%A4%E5%B0%8F%E8%AE%B0/"/>
-    <id>https://chentao92.github.io/2016/08/24/Git指令小记/</id>
+    <link href="https://taylor-chan.github.io/2016/08/24/Git%E6%8C%87%E4%BB%A4%E5%B0%8F%E8%AE%B0/"/>
+    <id>https://taylor-chan.github.io/2016/08/24/Git指令小记/</id>
     <published>2016-08-24T14:40:48.000Z</published>
     <updated>2017-07-26T06:39:33.000Z</updated>
     
@@ -443,17 +443,17 @@
     
     </summary>
     
-      <category term="Note" scheme="https://chentao92.github.io/categories/Note/"/>
+      <category term="Note" scheme="https://taylor-chan.github.io/categories/Note/"/>
     
     
-      <category term="Git" scheme="https://chentao92.github.io/tags/Git/"/>
+      <category term="Git" scheme="https://taylor-chan.github.io/tags/Git/"/>
     
   </entry>
   
   <entry>
     <title>如何用纯CSS实现带小三角形的会话框</title>
-    <link href="https://chentao92.github.io/2016/08/12/%E5%A6%82%E4%BD%95%E7%94%A8%E7%BA%AFCSS%E5%AE%9E%E7%8E%B0%E5%B8%A6%E5%B0%8F%E4%B8%89%E8%A7%92%E5%BD%A2%E7%9A%84%E4%BC%9A%E8%AF%9D%E6%A1%86/"/>
-    <id>https://chentao92.github.io/2016/08/12/如何用纯CSS实现带小三角形的会话框/</id>
+    <link href="https://taylor-chan.github.io/2016/08/12/%E5%A6%82%E4%BD%95%E7%94%A8%E7%BA%AFCSS%E5%AE%9E%E7%8E%B0%E5%B8%A6%E5%B0%8F%E4%B8%89%E8%A7%92%E5%BD%A2%E7%9A%84%E4%BC%9A%E8%AF%9D%E6%A1%86/"/>
+    <id>https://taylor-chan.github.io/2016/08/12/如何用纯CSS实现带小三角形的会话框/</id>
     <published>2016-08-12T03:07:31.000Z</published>
     <updated>2017-07-26T06:39:33.000Z</updated>
     
@@ -485,17 +485,17 @@
     
     </summary>
     
-      <category term="Web" scheme="https://chentao92.github.io/categories/Web/"/>
+      <category term="Web" scheme="https://taylor-chan.github.io/categories/Web/"/>
     
     
-      <category term="css" scheme="https://chentao92.github.io/tags/css/"/>
+      <category term="css" scheme="https://taylor-chan.github.io/tags/css/"/>
     
   </entry>
   
   <entry>
     <title>怎样使用Hexo通过Github Pages搭建个人博客</title>
-    <link href="https://chentao92.github.io/2016/07/22/how%20to%20bulid%20your%20blog%20on%20github%20pages/"/>
-    <id>https://chentao92.github.io/2016/07/22/how to bulid your blog on github pages/</id>
+    <link href="https://taylor-chan.github.io/2016/07/22/how%20to%20bulid%20your%20blog%20on%20github%20pages/"/>
+    <id>https://taylor-chan.github.io/2016/07/22/how to bulid your blog on github pages/</id>
     <published>2016-07-22T08:08:15.000Z</published>
     <updated>2017-07-26T06:39:33.000Z</updated>
     
@@ -569,12 +569,12 @@
     
     </summary>
     
-      <category term="Course" scheme="https://chentao92.github.io/categories/Course/"/>
+      <category term="Course" scheme="https://taylor-chan.github.io/categories/Course/"/>
     
     
-      <category term="Hexo" scheme="https://chentao92.github.io/tags/Hexo/"/>
+      <category term="Hexo" scheme="https://taylor-chan.github.io/tags/Hexo/"/>
     
-      <category term="blog" scheme="https://chentao92.github.io/tags/blog/"/>
+      <category term="blog" scheme="https://taylor-chan.github.io/tags/blog/"/>
     
   </entry>
   
