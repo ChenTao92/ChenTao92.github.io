@@ -482,7 +482,7 @@
 <p>登陆github系统。点击右上角的 Account Settings—&gt;SSH and GPG keys —&gt;New SSH key —&gt;填写<code>Title</code>和<code>Key</code><br><img src="http://ww1.sinaimg.cn/bmiddle/873fcdb7gw1f7js23dlmbj20qu0wejtv.jpg" alt=""><br><img src="http://ww1.sinaimg.cn/large/873fcdb7jw1f7jspdbjqxj21ht0vlgv4.jpg" alt=""></p>
 <p>4.最后，点击<code>Add SSH key</code>确认添加密钥</p>
 <h1 id="使用Github-Pages建立博客"><a href="#使用Github-Pages建立博客" class="headerlink" title="使用Github Pages建立博客"></a>使用Github Pages建立博客</h1><h2 id="github上建立仓库"><a href="#github上建立仓库" class="headerlink" title="github上建立仓库"></a>github上建立仓库</h2><p>1.在github首页，点击页面中的<code>Start a project</code><br><img src="http://ww3.sinaimg.cn/large/873fcdb7jw1f7jsrf98esj21800o443s.jpg" alt=""></p>
-<p>2.输入仓库名：<code>username.github.io</code> (username指你的github用户名，这里以<code>ChenTao92</code>为例)<br><img src="http://ww4.sinaimg.cn/large/873fcdb7jw1f7jt682c22j21ew0xe0y6.jpg" alt=""></p>
+<p>2.输入仓库名：<code>username.github.io</code> (username指你的github用户名，这里以<code>taylor-chan</code>为例)<br><img src="http://ww4.sinaimg.cn/large/873fcdb7jw1f7jt682c22j21ew0xe0y6.jpg" alt=""></p>
 <p><strong><em>注：Github Pages的Repository的名字是有规定格式的，否则Github无法识别这个Repository是你的Github账户的Pages</em></strong></p>
 <h2 id="在本地创建名为blog的文件夹，并初始化为git仓库"><a href="#在本地创建名为blog的文件夹，并初始化为git仓库" class="headerlink" title="在本地创建名为blog的文件夹，并初始化为git仓库"></a>在本地创建名为<code>blog</code>的文件夹，并初始化为git仓库</h2><p>(文件夹名可随意，此处以<code>blog</code>为例)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ mkdir blog</div><div class="line">$ <span class="built_in">cd</span> blog</div><div class="line">$ git init</div></pre></td></tr></table></figure></p>
 <p>这里用于存放建立blog的原始文件</p>
@@ -501,8 +501,8 @@
 <li>具体请参考主题的详细介绍页面，如Apollo主题就需要安装执行下面的指令：</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --save hexo-renderer-jade hexo-generator-feed hexo-generator-sitemap hexo-browsersync hexo-generator-archive</div></pre></td></tr></table></figure>
-<h2 id="配置deploy"><a href="#配置deploy" class="headerlink" title="配置deploy"></a>配置deploy</h2><p>在<code>_config.yml</code>文件中配置deploy（<code>username</code>以<code>ChenTao92</code>为例,请自行替换为自己的<code>username</code>）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">type</span>: git</div><div class="line">repository: git@github.com:ChenTao92/ChenTao92.github.io.git</div><div class="line">branch: master</div></pre></td></tr></table></figure>
+<h2 id="配置deploy"><a href="#配置deploy" class="headerlink" title="配置deploy"></a>配置deploy</h2><p>在<code>_config.yml</code>文件中配置deploy（<code>username</code>以<code>taylor-chan</code>为例,请自行替换为自己的<code>username</code>）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">type</span>: git</div><div class="line">repository: git@github.com:taylor-chan/taylor-chan.github.io.git</div><div class="line">branch: master</div></pre></td></tr></table></figure>
 <h2 id="写博客"><a href="#写博客" class="headerlink" title="写博客"></a>写博客</h2><p>输入<code>hexo new postName</code>指令即可，<code>postName</code>为你的新博文名称，hexo会在 <code>blog/source/_posts/</code>目录下建立新的<code>.md</code>文件，写入Markdown格式博文即可。</p>
 <p>写完博客之后，可以同样先输入命令<code>hexo s</code>启动本地服务，进行文章预览调试。</p>
 <h2 id="推送到Github"><a href="#推送到Github" class="headerlink" title="推送到Github"></a>推送到Github</h2><p>在本地预览无误后，可以执行推送到github的命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo g</div><div class="line">$ hexo d</div></pre></td></tr></table></figure></p>
@@ -510,7 +510,7 @@
 <li>若未遇到此问题，本步骤请忽略</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
-<h2 id="访问博客"><a href="#访问博客" class="headerlink" title="访问博客"></a>访问博客</h2><p>在以上步骤都成功完整后，浏览器访问链接 <code>https://{username}.github.io</code> 即可。<br>e.g. : <a href="https://chentao92.github.io">https://chentao92.github.io</a></p>
+<h2 id="访问博客"><a href="#访问博客" class="headerlink" title="访问博客"></a>访问博客</h2><p>在以上步骤都成功完整后，浏览器访问链接 <code>https://{username}.github.io</code> 即可。<br>e.g. : <a href="https://taylor-chan.github.io">https://taylor-chan.github.io</a></p>
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="0" height="0" src="http://music.163.com/outchain/player?type=2&id=425298905&auto=0&height=0"></iframe><br><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="https://music.163.com/outchain/player?type=2&id=425298905&auto=1&height=66"></iframe>
 
 <!-- >最近访客
