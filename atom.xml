@@ -497,7 +497,7 @@
     <link href="https://taylor-chan.github.io/2016/07/22/how%20to%20bulid%20your%20blog%20on%20github%20pages/"/>
     <id>https://taylor-chan.github.io/2016/07/22/how to bulid your blog on github pages/</id>
     <published>2016-07-22T08:08:15.000Z</published>
-    <updated>2018-02-27T17:37:55.000Z</updated>
+    <updated>2018-02-28T05:43:04.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在搭建博客的过程中参考了一些其他作者的资料，也遇到了一些小问题，所幸在Google之后找到了解决方案，感谢这些作者们，于是我决定把搭建的全过程记录下来，希望能够给大家提供一些参考。</p>
 <h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><h2 id="注册Github账号"><a href="#注册Github账号" class="headerlink" title="注册Github账号"></a>注册Github账号</h2><p>访问：<a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a></p>
@@ -518,10 +518,10 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ cat ~/.ssh/id_rsa.pub </div><div class="line">ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDA9vWA+ToVHjvMV+9LerF7hdHawqh3ls8OVSsYNfP2ppLS4/w47cWKOR+9Dv6cgqJLstDt7mgnbcpFcztLYZKBy1ZPBgOA1tYtxDIA2pDMIKsYd9M7UosgavCMgBg0dlO1y+xUhnyShqduDHblCCUjM9D+rB6HipeNQWZLWNZ39anPvjTp9ZizdDTtPYi7zaB/fcUatqxeHkFUjHm6WYaC/gQrYsqj1LAonQCdfdgHL8VZg2sXTxl+AOZfX1ZGTs3qXFAoUkDWaMQKC3UNTNrUC9MwNcs/+cLecaDMf+5BBxI71xRP+JLvAy1mTeux2vk0d9FyLU7et9d taochen@TC-MacBookpro.local</div></pre></td></tr></table></figure>
 <p>复制出密钥内容</p>
 <p>3.到github中添加密钥（把ssh的公钥给github）</p>
-<p>登陆github系统。点击右上角的 Account Settings—&gt;SSH and GPG keys —&gt;New SSH key —&gt;填写<code>Title</code>和<code>Key</code><br><img src="http://ww1.sinaimg.cn/bmiddle/873fcdb7gw1f7js23dlmbj20qu0wejtv.jpg" alt=""><br><img src="http://ww1.sinaimg.cn/large/873fcdb7jw1f7jspdbjqxj21ht0vlgv4.jpg" alt=""></p>
+<p>登陆github系统。点击右上角的 Account Settings—&gt;SSH and GPG keys —&gt;New SSH key —&gt;填写<code>Title</code>和<code>Key</code><br><img src="http://ww1.sinaimg.cn/large/873fcdb7gy1fow3whja67j207k08pmxf.jpg" alt=""><br><img src="http://ww1.sinaimg.cn/large/873fcdb7jw1f7jspdbjqxj21ht0vlgv4.jpg" alt=""></p>
 <p>4.最后，点击<code>Add SSH key</code>确认添加密钥</p>
 <h1 id="使用Github-Pages建立博客"><a href="#使用Github-Pages建立博客" class="headerlink" title="使用Github Pages建立博客"></a>使用Github Pages建立博客</h1><h2 id="github上建立仓库"><a href="#github上建立仓库" class="headerlink" title="github上建立仓库"></a>github上建立仓库</h2><p>1.在github首页，点击页面中的<code>Start a project</code><br><img src="http://ww3.sinaimg.cn/large/873fcdb7jw1f7jsrf98esj21800o443s.jpg" alt=""></p>
-<p>2.输入仓库名：<code>username.github.io</code> (username指你的github用户名，这里以<code>taylor-chan</code>为例)<br><img src="http://ww4.sinaimg.cn/large/873fcdb7jw1f7jt682c22j21ew0xe0y6.jpg" alt=""></p>
+<p>2.输入仓库名：<code>username.github.io</code> (username指你的github用户名，这里以<code>taylor-chan</code>为例)<br><img src="http://ww1.sinaimg.cn/large/873fcdb7gy1fow3xjitf7j20lx0htwgo.jpg" alt=""></p>
 <p><strong><em>注：Github Pages的Repository的名字是有规定格式的，否则Github无法识别这个Repository是你的Github账户的Pages</em></strong></p>
 <h2 id="在本地创建名为blog的文件夹，并初始化为git仓库"><a href="#在本地创建名为blog的文件夹，并初始化为git仓库" class="headerlink" title="在本地创建名为blog的文件夹，并初始化为git仓库"></a>在本地创建名为<code>blog</code>的文件夹，并初始化为git仓库</h2><p>(文件夹名可随意，此处以<code>blog</code>为例)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ mkdir blog</div><div class="line">$ <span class="built_in">cd</span> blog</div><div class="line">$ git init</div></pre></td></tr></table></figure></p>
 <p>这里用于存放建立blog的原始文件</p>
