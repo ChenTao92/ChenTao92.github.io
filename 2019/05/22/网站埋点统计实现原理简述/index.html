@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="taochen, 前端, 技术分享, 个人博客" />
+  <meta name="keywords" content="cnzz,埋点," />
 
 
 
@@ -89,16 +89,22 @@
 
 
 
-<meta name="description" content="web developer">
-<meta property="og:type" content="website">
-<meta property="og:title" content="TaoChen&#39;s Blog">
-<meta property="og:url" content="https://taylor-chan.github.io/categories/Web/index.html">
+<meta name="description" content="什么是网站埋点统计收集网页访问相关的数据信息，以用于数据统计分析。如：网站访问量(PV/UV)、页面停留时间、访问来源、搜索引擎分布、浏览器版本分布、用户区域分布、页面热点区域等等。 相关概念（PV，UV，IP）PV（访问量）即page View，是指当前页面的浏览量或者点击量，页面刷新一次或者重载一次都要+1。 UV（独立访客）即Unique Visitor，是将访问网站的一台客户端作为一个访客">
+<meta name="keywords" content="cnzz,埋点">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网站埋点统计实现原理简述">
+<meta property="og:url" content="https://taylor-chan.github.io/2019/05/22/网站埋点统计实现原理简述/index.html">
 <meta property="og:site_name" content="TaoChen&#39;s Blog">
-<meta property="og:description" content="web developer">
+<meta property="og:description" content="什么是网站埋点统计收集网页访问相关的数据信息，以用于数据统计分析。如：网站访问量(PV/UV)、页面停留时间、访问来源、搜索引擎分布、浏览器版本分布、用户区域分布、页面热点区域等等。 相关概念（PV，UV，IP）PV（访问量）即page View，是指当前页面的浏览量或者点击量，页面刷新一次或者重载一次都要+1。 UV（独立访客）即Unique Visitor，是将访问网站的一台客户端作为一个访客">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/873fcdb7gy1g337v0lk7yj21b00zqwmn.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/873fcdb7gy1g3383amjexj214y0usdoq.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/873fcdb7gy1g338ttqnqwj20d50chag5.jpg">
+<meta property="og:updated_time" content="2019-05-16T11:50:22.543Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TaoChen&#39;s Blog">
-<meta name="twitter:description" content="web developer">
+<meta name="twitter:title" content="网站埋点统计实现原理简述">
+<meta name="twitter:description" content="什么是网站埋点统计收集网页访问相关的数据信息，以用于数据统计分析。如：网站访问量(PV/UV)、页面停留时间、访问来源、搜索引擎分布、浏览器版本分布、用户区域分布、页面热点区域等等。 相关概念（PV，UV，IP）PV（访问量）即page View，是指当前页面的浏览量或者点击量，页面刷新一次或者重载一次都要+1。 UV（独立访客）即Unique Visitor，是将访问网站的一台客户端作为一个访客">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/873fcdb7gy1g337v0lk7yj21b00zqwmn.jpg">
 
 
 
@@ -126,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="https://taylor-chan.github.io/categories/Web/"/>
+  <link rel="canonical" href="https://taylor-chan.github.io/2019/05/22/网站埋点统计实现原理简述/"/>
 
 
 
 
 
-  <title> 分类: Web | TaoChen's Blog </title>
+  <title> 网站埋点统计实现原理简述 | TaoChen's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -157,7 +163,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -315,103 +321,252 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        Web
-        <small>分类</small>
-      </h2>
-    </div>
-
+  <div id="posts" class="posts-expand">
     
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2019/05/22/网站埋点统计实现原理简述/" itemprop="url">
-              
-                <span itemprop="name">网站埋点统计实现原理简述</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-05-22T19:09:50+08:00"
-              content="2019-05-22" >
-          05-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2019/05/16/友盟cnzz埋点踩坑小记/" itemprop="url">
-              
-                <span itemprop="name">友盟cnzz埋点踩坑小记</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-05-16T15:08:39+08:00"
-              content="2019-05-16" >
-          05-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/08/12/如何用纯CSS实现带小三角形的会话框/" itemprop="url">
-              
-                <span itemprop="name">如何用纯CSS实现带小三角形的会话框</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-08-12T11:07:31+08:00"
-              content="2016-08-12" >
-          08-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-  </section>
 
   
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://taylor-chan.github.io/2019/05/22/网站埋点统计实现原理简述/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="taochen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TaoChen's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                网站埋点统计实现原理简述
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-22T19:09:50+08:00">
+                2019-05-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web/" itemprop="url" rel="index">
+                    <span itemprop="name">Web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/05/22/网站埋点统计实现原理简述/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2019/05/22/网站埋点统计实现原理简述/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">阅读次数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="什么是网站埋点统计"><a href="#什么是网站埋点统计" class="headerlink" title="什么是网站埋点统计"></a>什么是网站埋点统计</h2><p>收集网页访问相关的数据信息，以用于数据统计分析。如：网站访问量(PV/UV)、页面停留时间、访问来源、搜索引擎分布、浏览器版本分布、用户区域分布、页面热点区域等等。</p>
+<h3 id="相关概念（PV，UV，IP）"><a href="#相关概念（PV，UV，IP）" class="headerlink" title="相关概念（PV，UV，IP）"></a>相关概念（PV，UV，IP）</h3><p><strong><em>PV（访问量）</em></strong><br>即page View，是指当前页面的浏览量或者点击量，页面刷新一次或者重载一次都要+1。</p>
+<p><strong><em>UV（独立访客）</em></strong><br>即Unique Visitor，是将访问网站的一台客户端作为一个访客来看待，每天0:00-23:59同一个客户端只记一次。页面刷新不会+1</p>
+<p><strong><em>IP（独立IP）</em></strong><br>即Internet Protocol，独立IP数，每天0:00-23:59同一个IP只记一次。</p>
+<h2 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h2><p>对比了目前主流的几家产品，友盟+(cnzz 统计)、google Analytics、百度统计、腾讯分析、51la等，实现方式都大致相同。  </p>
+<ul>
+<li>前端客户端负责采集数据，打包整理好待发送的数据</li>
+<li>在合适的时机将数据发送给服务器</li>
+<li>服务器将接受到的数据清洗，整理</li>
+<li>在后台系统中已报表图形的方式呈现出来</li>
+</ul>
+<h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><ul>
+<li>实现方式上，前端方面主要在于如何最轻便的把数据发送到统计服务器。</li>
+<li>目前公认比较成熟的方案是：通过请求服务器上的一张1x1大小的gif图片，或者请求一个1x1的不可见像素的方式将数据发送到服务器，将你需要传递的数据组装好之后，以请求参数queryString的形式请求服务器上的gif图片或其他资源  </li>
+<li>至于如何区分是不是独立的访客，第一次请求gif文件或其他资源文件的时候，会在客户端写入一份cookie，以后每次请求都会携带这个cookie的值，服务器在数据清洗的时候就可以区分具体访客了</li>
+</ul>
+<h2 id="几种埋点工具"><a href="#几种埋点工具" class="headerlink" title="几种埋点工具"></a>几种埋点工具</h2><ul>
+<li><p>友盟cnzz统计：请求一个1x1的不可见像素<br><img src="http://ww1.sinaimg.cn/large/873fcdb7gy1g337v0lk7yj21b00zqwmn.jpg" alt=""></p>
+</li>
+<li><p>51LA统计<br><img src="http://ww1.sinaimg.cn/large/873fcdb7gy1g3383amjexj214y0usdoq.jpg" alt=""></p>
+</li>
+<li><p>百度统计<br><img src="http://ww1.sinaimg.cn/large/873fcdb7gy1g338ttqnqwj20d50chag5.jpg" alt=""></p>
+</li>
+</ul>
+<h2 id="为什要用请求资源的形式而不用REST-API"><a href="#为什要用请求资源的形式而不用REST-API" class="headerlink" title="为什要用请求资源的形式而不用REST API"></a>为什要用请求资源的形式而不用REST API</h2><ul>
+<li>其实原因很简单，埋点不需要来自服务器的任何返回数据，而是想要将信息发送到服务器。因此，客户端请求的服务器资源纯粹是预先设置的，客户端甚至不需要该资源。</li>
+<li>GET请求是为该传输选择的Request Method，这意味着必须将数据打包到GET请求的请求头中。<br>GET请求是从客户端到服务器的请求，因此客户端必须从服务器请求资源才能使其成为有效的GET请求，所以请求一个“假”资源。</li>
+<li>因此，使该资源尽可能小和不引人注意是有意义的，这就是为什么它是gif格式的1x1透明像素。</li>
+<li>至于为什么用gif不同别的类型图片，那是因为几种类型的图片文件中（bmp, png，jpg，gif等）gif最小了。</li>
+</ul>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="0" height="0" src="http://music.163.com/outchain/player?type=2&id=28387594&auto=0&height=0"></iframe><br><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="https://music.163.com/outchain/player?type=2&id=28387594&auto=1&height=66"></iframe>
+
+<!-- >最近访客
+
+<div class="ds-recent-visitors" data-num-items="28" data-avatar-size="42" id="ds-recent-visitors"></div>
+<br> -->
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>您的支持将鼓励我继续前行！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/wechatpay.jpg" alt="taochen WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/alipay.jpg" alt="taochen Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/cnzz/" rel="tag"># cnzz</a>
+          
+            <a href="/tags/埋点/" rel="tag"># 埋点</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/16/友盟cnzz埋点踩坑小记/" rel="next" title="友盟cnzz埋点踩坑小记">
+                <i class="fa fa-chevron-left"></i> 友盟cnzz埋点踩坑小记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -419,6 +574,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
+    
+  </div>
+
 
         </div>
         
@@ -438,8 +599,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
@@ -550,6 +720,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是网站埋点统计"><span class="nav-number">1.</span> <span class="nav-text">什么是网站埋点统计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#相关概念（PV，UV，IP）"><span class="nav-number">1.1.</span> <span class="nav-text">相关概念（PV，UV，IP）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现原理"><span class="nav-number">2.</span> <span class="nav-text">实现原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现方式"><span class="nav-number">3.</span> <span class="nav-text">实现方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#几种埋点工具"><span class="nav-number">4.</span> <span class="nav-text">几种埋点工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什要用请求资源的形式而不用REST-API"><span class="nav-number">5.</span> <span class="nav-text">为什要用请求资源的形式而不用REST API</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -689,6 +875,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
@@ -712,6 +902,8 @@
 
 		_hcwp.push({widget:"Bloggerstream", widget_id: 93724, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
+		
+		_hcwp.push({widget:"Stream", widget_id: 93724, xid: "2019/05/22/网站埋点统计实现原理简述/"});
 		
 
 		(function() {
