@@ -100,7 +100,7 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/873fcdb7gy1g337v0lk7yj21b00zqwmn.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/873fcdb7gy1g3383amjexj214y0usdoq.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/873fcdb7gy1g338ttqnqwj20d50chag5.jpg">
-<meta property="og:updated_time" content="2019-05-16T11:50:22.543Z">
+<meta property="og:updated_time" content="2019-05-16T11:54:48.609Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网站埋点统计实现原理简述">
 <meta name="twitter:description" content="什么是网站埋点统计收集网页访问相关的数据信息，以用于数据统计分析。如：网站访问量(PV/UV)、页面停留时间、访问来源、搜索引擎分布、浏览器版本分布、用户区域分布、页面热点区域等等。 相关概念（PV，UV，IP）PV（访问量）即page View，是指当前页面的浏览量或者点击量，页面刷新一次或者重载一次都要+1。 UV（独立访客）即Unique Visitor，是将访问网站的一台客户端作为一个访客">
@@ -444,8 +444,7 @@
       
         <h2 id="什么是网站埋点统计"><a href="#什么是网站埋点统计" class="headerlink" title="什么是网站埋点统计"></a>什么是网站埋点统计</h2><p>收集网页访问相关的数据信息，以用于数据统计分析。如：网站访问量(PV/UV)、页面停留时间、访问来源、搜索引擎分布、浏览器版本分布、用户区域分布、页面热点区域等等。</p>
 <h3 id="相关概念（PV，UV，IP）"><a href="#相关概念（PV，UV，IP）" class="headerlink" title="相关概念（PV，UV，IP）"></a>相关概念（PV，UV，IP）</h3><p><strong><em>PV（访问量）</em></strong><br>即page View，是指当前页面的浏览量或者点击量，页面刷新一次或者重载一次都要+1。</p>
-<p><strong><em>UV（独立访客）</em></strong><br>即Unique Visitor，是将访问网站的一台客户端作为一个访客来看待，每天0:00-23:59同一个客户端只记一次。页面刷新不会+1</p>
-<p><strong><em>IP（独立IP）</em></strong><br>即Internet Protocol，独立IP数，每天0:00-23:59同一个IP只记一次。</p>
+<p><strong><em>UV（独立访客）</em></strong><br>即Unique Visitor，是将访问网站的一台客户端作为一个访客来看待，每天0:00-23:59同一个客户端只记一次。页面刷新不会+1<br><a id="more"></a><br><strong><em>IP（独立IP）</em></strong><br>即Internet Protocol，独立IP数，每天0:00-23:59同一个IP只记一次。</p>
 <h2 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h2><p>对比了目前主流的几家产品，友盟+(cnzz 统计)、google Analytics、百度统计、腾讯分析、51la等，实现方式都大致相同。  </p>
 <ul>
 <li>前端客户端负责采集数据，打包整理好待发送的数据</li>

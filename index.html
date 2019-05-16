@@ -437,44 +437,16 @@
 
       
         
-          
-            <h2 id="什么是网站埋点统计"><a href="#什么是网站埋点统计" class="headerlink" title="什么是网站埋点统计"></a>什么是网站埋点统计</h2><p>收集网页访问相关的数据信息，以用于数据统计分析。如：网站访问量(PV/UV)、页面停留时间、访问来源、搜索引擎分布、浏览器版本分布、用户区域分布、页面热点区域等等。</p>
+          <h2 id="什么是网站埋点统计"><a href="#什么是网站埋点统计" class="headerlink" title="什么是网站埋点统计"></a>什么是网站埋点统计</h2><p>收集网页访问相关的数据信息，以用于数据统计分析。如：网站访问量(PV/UV)、页面停留时间、访问来源、搜索引擎分布、浏览器版本分布、用户区域分布、页面热点区域等等。</p>
 <h3 id="相关概念（PV，UV，IP）"><a href="#相关概念（PV，UV，IP）" class="headerlink" title="相关概念（PV，UV，IP）"></a>相关概念（PV，UV，IP）</h3><p><strong><em>PV（访问量）</em></strong><br>即page View，是指当前页面的浏览量或者点击量，页面刷新一次或者重载一次都要+1。</p>
-<p><strong><em>UV（独立访客）</em></strong><br>即Unique Visitor，是将访问网站的一台客户端作为一个访客来看待，每天0:00-23:59同一个客户端只记一次。页面刷新不会+1</p>
-<p><strong><em>IP（独立IP）</em></strong><br>即Internet Protocol，独立IP数，每天0:00-23:59同一个IP只记一次。</p>
-<h2 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h2><p>对比了目前主流的几家产品，友盟+(cnzz 统计)、google Analytics、百度统计、腾讯分析、51la等，实现方式都大致相同。  </p>
-<ul>
-<li>前端客户端负责采集数据，打包整理好待发送的数据</li>
-<li>在合适的时机将数据发送给服务器</li>
-<li>服务器将接受到的数据清洗，整理</li>
-<li>在后台系统中已报表图形的方式呈现出来</li>
-</ul>
-<h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><ul>
-<li>实现方式上，前端方面主要在于如何最轻便的把数据发送到统计服务器。</li>
-<li>目前公认比较成熟的方案是：通过请求服务器上的一张1x1大小的gif图片，或者请求一个1x1的不可见像素的方式将数据发送到服务器，将你需要传递的数据组装好之后，以请求参数queryString的形式请求服务器上的gif图片或其他资源  </li>
-<li>至于如何区分是不是独立的访客，第一次请求gif文件或其他资源文件的时候，会在客户端写入一份cookie，以后每次请求都会携带这个cookie的值，服务器在数据清洗的时候就可以区分具体访客了</li>
-</ul>
-<h2 id="几种埋点工具"><a href="#几种埋点工具" class="headerlink" title="几种埋点工具"></a>几种埋点工具</h2><ul>
-<li><p>友盟cnzz统计：请求一个1x1的不可见像素<br><img src="http://ww1.sinaimg.cn/large/873fcdb7gy1g337v0lk7yj21b00zqwmn.jpg" alt=""></p>
-</li>
-<li><p>51LA统计<br><img src="http://ww1.sinaimg.cn/large/873fcdb7gy1g3383amjexj214y0usdoq.jpg" alt=""></p>
-</li>
-<li><p>百度统计<br><img src="http://ww1.sinaimg.cn/large/873fcdb7gy1g338ttqnqwj20d50chag5.jpg" alt=""></p>
-</li>
-</ul>
-<h2 id="为什要用请求资源的形式而不用REST-API"><a href="#为什要用请求资源的形式而不用REST-API" class="headerlink" title="为什要用请求资源的形式而不用REST API"></a>为什要用请求资源的形式而不用REST API</h2><ul>
-<li>其实原因很简单，埋点不需要来自服务器的任何返回数据，而是想要将信息发送到服务器。因此，客户端请求的服务器资源纯粹是预先设置的，客户端甚至不需要该资源。</li>
-<li>GET请求是为该传输选择的Request Method，这意味着必须将数据打包到GET请求的请求头中。<br>GET请求是从客户端到服务器的请求，因此客户端必须从服务器请求资源才能使其成为有效的GET请求，所以请求一个“假”资源。</li>
-<li>因此，使该资源尽可能小和不引人注意是有意义的，这就是为什么它是gif格式的1x1透明像素。</li>
-<li>至于为什么用gif不同别的类型图片，那是因为几种类型的图片文件中（bmp, png，jpg，gif等）gif最小了。</li>
-</ul>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="0" height="0" src="http://music.163.com/outchain/player?type=2&id=28387594&auto=0&height=0"></iframe><br><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="https://music.163.com/outchain/player?type=2&id=28387594&auto=1&height=66"></iframe>
-
-<!-- >最近访客
-
-<div class="ds-recent-visitors" data-num-items="28" data-avatar-size="42" id="ds-recent-visitors"></div>
-<br> -->
-          
+<p><strong><em>UV（独立访客）</em></strong><br>即Unique Visitor，是将访问网站的一台客户端作为一个访客来看待，每天0:00-23:59同一个客户端只记一次。页面刷新不会+1<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/05/22/网站埋点统计实现原理简述/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -626,42 +598,17 @@
 
       
         
-          
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
 <p>在近期的一个<code>Vue+Webpack</code>前端项目中，遇到需要打开H5页面后，针对不同环境进行差异化访问埋点（如在微信中、在嵌入的客户端中埋不同的点）的需求。这里选择使用友盟cnzz来进行代码埋点和数据追踪统计，现在把遇到的坑和解决方案记录下来供大家参考。</p>
 </blockquote>
 <h3 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h3><p>友盟cnzz封装<code>umeng.js</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> umId = <span class="number">1234567890</span>;<span class="comment">//这里填你的siteId</span></div><div class="line"><span class="keyword">var</span> umScript = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</div><div class="line">umScript.src = <span class="string">'https://s95.cnzz.com/z_stat.php?id='</span> + umId + <span class="string">'&amp;web_id='</span> + umId;</div><div class="line">umScript.setAttribute(<span class="string">'language'</span>, <span class="string">'JavaScript'</span>);</div><div class="line"><span class="built_in">document</span>.head.appendChild(umScript);</div><div class="line"></div><div class="line"><span class="keyword">var</span> _czc = [];</div><div class="line">umScript.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="comment">//声明_czc对象</span></div><div class="line">  <span class="keyword">var</span> _czc = _czc || [];</div><div class="line">  <span class="comment">//绑定siteid</span></div><div class="line">  _czc.push([<span class="string">"_setAccount"</span>, umId]);</div><div class="line">  <span class="comment">/* ... */</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<p>在入口文件<code>main.js</code>中引入<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> <span class="string">"./umeng"</span>;</div></pre></td></tr></table></figure></p>
-<p>具体业务逻辑<code>xxx.vue</code>文件中<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    <span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">        mounted() &#123;</div><div class="line">            <span class="keyword">if</span> (<span class="comment">/* ... */</span>) &#123;</div><div class="line">                _czc.push([<span class="string">"_trackEvent"</span>, <span class="string">'xxx'</span>, <span class="string">'yyy'</span>]);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure></p>
-<p>这里我们埋的是事件点，好了，埋点完成，跑一下代码，结果发现错误提示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">VM13155:1 Uncaught ReferenceError: _czc is not defined</div></pre></td></tr></table></figure></p>
-<p>问题来了，这里为什么_czc对象会找不到呢？</p>
-<blockquote>
-<p>原因是，_czc对象的声明和绑定siteId是在onload事件中执行的，此时mounted钩子触发后，可能还未触发onload事件，所以找不到这个对象很正常。所以，我们需要在onload事件完成后，才去执行埋点操作。但是这种操作判断，不适合写到具体业务逻辑中，故我们将其逻辑处理同样放到<code>umeng.js</code>中，大致思路是，export出一个新的埋点方法<code>logEvent</code>，声明两个新的变量，用<code>loaded</code>标记onload事件的触发状态，用<code>events</code>本地缓存尚未onload时的埋点请求，待onload后统一执行埋点。</p>
-</blockquote>
-<h3 id="优化如下"><a href="#优化如下" class="headerlink" title="优化如下"></a>优化如下</h3><p>友盟cnzz封装<code>umeng.js</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> umId = <span class="number">1234567890</span>;<span class="comment">//这里填你的siteId</span></div><div class="line"><span class="keyword">var</span> umScript = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</div><div class="line">umScript.src = <span class="string">'https://s95.cnzz.com/z_stat.php?id='</span> + umId + <span class="string">'&amp;web_id='</span> + umId;</div><div class="line">umScript.setAttribute(<span class="string">'language'</span>, <span class="string">'JavaScript'</span>);</div><div class="line"><span class="built_in">document</span>.head.appendChild(umScript);</div><div class="line"></div><div class="line"><span class="keyword">var</span> _czc = [];</div><div class="line"><span class="keyword">let</span> loaded = <span class="literal">false</span>;<span class="comment">//用于标记onload的触发状态</span></div><div class="line"><span class="keyword">let</span> events = [];<span class="comment">//用于本地缓存尚未onload时的埋点请求</span></div><div class="line">umScript.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="comment">//声明_czc对象</span></div><div class="line">  <span class="keyword">var</span> _czc = _czc || [];</div><div class="line">  <span class="comment">//绑定siteid</span></div><div class="line">  _czc.push([<span class="string">"_setAccount"</span>, umId]);</div><div class="line">  loaded = <span class="literal">true</span>;</div><div class="line">  events.forEach(<span class="function"><span class="params">e</span> =&gt;</span> &#123;</div><div class="line">    _czc.push(e)</div><div class="line">  &#125;);</div><div class="line">  <span class="comment">/* ... */</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> logEvent = <span class="function">(<span class="params">category, action</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">if</span>(loaded) _czc.push([<span class="string">"_trackEvent"</span>, category, action]);</div><div class="line">  <span class="keyword">else</span> events.push([<span class="string">"_trackEvent"</span>, category, action])</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>具体业务逻辑<code>xxx.vue</code>文件中<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    <span class="keyword">import</span> &#123;logEvent&#125; <span class="keyword">from</span> <span class="string">"./umeng"</span>;</div><div class="line">    <span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">        mounted() &#123;</div><div class="line">            <span class="keyword">if</span> (<span class="comment">/* ... */</span>) &#123;</div><div class="line">                logEvent(<span class="string">'xxx'</span>, <span class="string">'yyy'</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure></p>
-<p>好了，这下没有报错问题了，然而经过多次测试，友盟cnzz统计后台结果显示，并没有统计到所埋的事件点。经过多方排查，找到原因如下：  </p>
-<blockquote>
-<p>友盟cnzz埋点的原理，大致是通过注入一段script脚本，然后这段脚本会给window对象下的_czc提供一个特别的push方法，这样我们通过调用_czc的push方法，把参数信息传递到友盟cnzz的后台。</p>
-</blockquote>
-<p>这里简要介绍下ES6的模块化</p>
-<blockquote>
-<p>在ES6中模块作为重要的组成部分被添加进来。模块的功能主要由 export 和 import 组成。每一个模块都有自己单独的作用域，模块之间的相互调用关系是通过 export 来规定模块对外暴露的接口，通过import来引用其它模块提供的接口。同时还为模块创造了命名空间，防止函数的命名冲突。</p>
-</blockquote>
-<p>前面我们所封装的<code>umeng.js</code>，是通过<code>ES6的模块化export导出和import引入</code>到业务代码中的。所以，我们在<code>umeng.js</code>中声明的<code>_czc</code>空数组，并不会被友盟cnzz的脚本初始化，被初始化的是window对象下的<code>_czc</code>，所以在<code>umeng.js</code>中的<code>_czc</code>的push方法只是一个普通数组拥有的push方法，往这里的<code>_czc</code>里面push埋点参数，并不会触发任何cnzz的逻辑。</p>
-<h3 id="再次优化"><a href="#再次优化" class="headerlink" title="再次优化"></a>再次优化</h3><p>修改<code>umeng.js</code>如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> umId = <span class="number">1234567890</span>;<span class="comment">//这里填你的siteId</span></div><div class="line"><span class="keyword">var</span> umScript = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</div><div class="line">umScript.src = <span class="string">'https://s95.cnzz.com/z_stat.php?id='</span> + umId + <span class="string">'&amp;web_id='</span> + umId;</div><div class="line">umScript.setAttribute(<span class="string">'language'</span>, <span class="string">'JavaScript'</span>);</div><div class="line"><span class="built_in">document</span>.head.appendChild(umScript);</div><div class="line"></div><div class="line"><span class="keyword">let</span> loaded = <span class="literal">false</span>;<span class="comment">//用于标记onload的触发状态</span></div><div class="line"><span class="keyword">let</span> events = [];<span class="comment">//用于本地缓存尚未onload时的埋点请求</span></div><div class="line">umScript.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="comment">//声明_czc对象</span></div><div class="line">  <span class="built_in">window</span>._czc = <span class="built_in">window</span>._czc || [];</div><div class="line">  <span class="comment">//绑定siteid</span></div><div class="line">  _czc.push([<span class="string">"_setAccount"</span>, umId]);</div><div class="line">  loaded = <span class="literal">true</span>;</div><div class="line">  events.forEach(<span class="function"><span class="params">e</span> =&gt;</span> &#123;</div><div class="line">    _czc.push(e)</div><div class="line">  &#125;);</div><div class="line">  <span class="comment">/* ... */</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> logEvent = <span class="function">(<span class="params">category, action</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">if</span>(loaded) _czc.push([<span class="string">"_trackEvent"</span>, category, action]);</div><div class="line">  <span class="keyword">else</span> events.push([<span class="string">"_trackEvent"</span>, category, action])</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>至此，我们终于成功的将事件点成功埋上，在友盟cnzz收到了统计数据。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
-<li>未onload的时候，要把埋点缓存下来，待onload后统一执行埋点</li>
-<li>声明和初始化的<code>_czc</code>，一定要声明在window对象下，不要写在函数里，且只需要定义一次</li>
-</ul>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="0" height="0" src="http://music.163.com/outchain/player?type=2&id=28387594&auto=0&height=0"></iframe><br><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="https://music.163.com/outchain/player?type=2&id=28387594&auto=1&height=66"></iframe>
-
-<!-- >最近访客
-
-<div class="ds-recent-visitors" data-num-items="28" data-avatar-size="42" id="ds-recent-visitors"></div>
-<br> -->
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/05/16/友盟cnzz埋点踩坑小记/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

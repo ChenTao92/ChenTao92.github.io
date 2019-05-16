@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://taylor-chan.github.io/"/>
-  <updated>2019-05-16T11:50:22.543Z</updated>
+  <updated>2019-05-16T11:54:48.609Z</updated>
   <id>https://taylor-chan.github.io/</id>
   
   <author>
@@ -20,12 +20,11 @@
     <link href="https://taylor-chan.github.io/2019/05/22/%E7%BD%91%E7%AB%99%E5%9F%8B%E7%82%B9%E7%BB%9F%E8%AE%A1%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86%E7%AE%80%E8%BF%B0/"/>
     <id>https://taylor-chan.github.io/2019/05/22/网站埋点统计实现原理简述/</id>
     <published>2019-05-22T11:09:50.000Z</published>
-    <updated>2019-05-16T11:50:22.543Z</updated>
+    <updated>2019-05-16T11:54:48.609Z</updated>
     
     <content type="html"><![CDATA[<h2 id="什么是网站埋点统计"><a href="#什么是网站埋点统计" class="headerlink" title="什么是网站埋点统计"></a>什么是网站埋点统计</h2><p>收集网页访问相关的数据信息，以用于数据统计分析。如：网站访问量(PV/UV)、页面停留时间、访问来源、搜索引擎分布、浏览器版本分布、用户区域分布、页面热点区域等等。</p>
 <h3 id="相关概念（PV，UV，IP）"><a href="#相关概念（PV，UV，IP）" class="headerlink" title="相关概念（PV，UV，IP）"></a>相关概念（PV，UV，IP）</h3><p><strong><em>PV（访问量）</em></strong><br>即page View，是指当前页面的浏览量或者点击量，页面刷新一次或者重载一次都要+1。</p>
-<p><strong><em>UV（独立访客）</em></strong><br>即Unique Visitor，是将访问网站的一台客户端作为一个访客来看待，每天0:00-23:59同一个客户端只记一次。页面刷新不会+1</p>
-<p><strong><em>IP（独立IP）</em></strong><br>即Internet Protocol，独立IP数，每天0:00-23:59同一个IP只记一次。</p>
+<p><strong><em>UV（独立访客）</em></strong><br>即Unique Visitor，是将访问网站的一台客户端作为一个访客来看待，每天0:00-23:59同一个客户端只记一次。页面刷新不会+1<br><a id="more"></a><br><strong><em>IP（独立IP）</em></strong><br>即Internet Protocol，独立IP数，每天0:00-23:59同一个IP只记一次。</p>
 <h2 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h2><p>对比了目前主流的几家产品，友盟+(cnzz 统计)、google Analytics、百度统计、腾讯分析、51la等，实现方式都大致相同。  </p>
 <ul>
 <li>前端客户端负责采集数据，打包整理好待发送的数据</li>
@@ -61,7 +60,9 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;什么是网站埋点统计&quot;&gt;&lt;a href=&quot;#什么是网站埋点统计&quot; class=&quot;headerlink&quot; title=&quot;什么是网站埋点统计&quot;&gt;&lt;/a&gt;什么是网站埋点统计&lt;/h2&gt;&lt;p&gt;收集网页访问相关的数据信息，以用于数据统计分析。如：网站访问量(PV/UV)、页面停
+      &lt;h2 id=&quot;什么是网站埋点统计&quot;&gt;&lt;a href=&quot;#什么是网站埋点统计&quot; class=&quot;headerlink&quot; title=&quot;什么是网站埋点统计&quot;&gt;&lt;/a&gt;什么是网站埋点统计&lt;/h2&gt;&lt;p&gt;收集网页访问相关的数据信息，以用于数据统计分析。如：网站访问量(PV/UV)、页面停留时间、访问来源、搜索引擎分布、浏览器版本分布、用户区域分布、页面热点区域等等。&lt;/p&gt;
+&lt;h3 id=&quot;相关概念（PV，UV，IP）&quot;&gt;&lt;a href=&quot;#相关概念（PV，UV，IP）&quot; class=&quot;headerlink&quot; title=&quot;相关概念（PV，UV，IP）&quot;&gt;&lt;/a&gt;相关概念（PV，UV，IP）&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;PV（访问量）&lt;/em&gt;&lt;/strong&gt;&lt;br&gt;即page View，是指当前页面的浏览量或者点击量，页面刷新一次或者重载一次都要+1。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;UV（独立访客）&lt;/em&gt;&lt;/strong&gt;&lt;br&gt;即Unique Visitor，是将访问网站的一台客户端作为一个访客来看待，每天0:00-23:59同一个客户端只记一次。页面刷新不会+1&lt;br&gt;
     
     </summary>
     
@@ -79,12 +80,13 @@
     <link href="https://taylor-chan.github.io/2019/05/16/%E5%8F%8B%E7%9B%9Fcnzz%E5%9F%8B%E7%82%B9%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0/"/>
     <id>https://taylor-chan.github.io/2019/05/16/友盟cnzz埋点踩坑小记/</id>
     <published>2019-05-16T07:08:39.000Z</published>
-    <updated>2019-05-16T11:49:37.600Z</updated>
+    <updated>2019-05-16T11:55:08.085Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
 <p>在近期的一个<code>Vue+Webpack</code>前端项目中，遇到需要打开H5页面后，针对不同环境进行差异化访问埋点（如在微信中、在嵌入的客户端中埋不同的点）的需求。这里选择使用友盟cnzz来进行代码埋点和数据追踪统计，现在把遇到的坑和解决方案记录下来供大家参考。</p>
 </blockquote>
 <h3 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h3><p>友盟cnzz封装<code>umeng.js</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> umId = <span class="number">1234567890</span>;<span class="comment">//这里填你的siteId</span></div><div class="line"><span class="keyword">var</span> umScript = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</div><div class="line">umScript.src = <span class="string">'https://s95.cnzz.com/z_stat.php?id='</span> + umId + <span class="string">'&amp;web_id='</span> + umId;</div><div class="line">umScript.setAttribute(<span class="string">'language'</span>, <span class="string">'JavaScript'</span>);</div><div class="line"><span class="built_in">document</span>.head.appendChild(umScript);</div><div class="line"></div><div class="line"><span class="keyword">var</span> _czc = [];</div><div class="line">umScript.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="comment">//声明_czc对象</span></div><div class="line">  <span class="keyword">var</span> _czc = _czc || [];</div><div class="line">  <span class="comment">//绑定siteid</span></div><div class="line">  _czc.push([<span class="string">"_setAccount"</span>, umId]);</div><div class="line">  <span class="comment">/* ... */</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p>在入口文件<code>main.js</code>中引入<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> <span class="string">"./umeng"</span>;</div></pre></td></tr></table></figure></p>
 <p>具体业务逻辑<code>xxx.vue</code>文件中<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    <span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">        mounted() &#123;</div><div class="line">            <span class="keyword">if</span> (<span class="comment">/* ... */</span>) &#123;</div><div class="line">                _czc.push([<span class="string">"_trackEvent"</span>, <span class="string">'xxx'</span>, <span class="string">'yyy'</span>]);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure></p>
 <p>这里我们埋的是事件点，好了，埋点完成，跑一下代码，结果发现错误提示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">VM13155:1 Uncaught ReferenceError: _czc is not defined</div></pre></td></tr></table></figure></p>
@@ -119,7 +121,9 @@
     <summary type="html">
     
       &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;在近期的一个&lt;code&gt;Vue+Webpack&lt;/code&gt;前端项目中，遇到需要打开H5页面后，针对不同环境进行差
+&lt;p&gt;在近期的一个&lt;code&gt;Vue+Webpack&lt;/code&gt;前端项目中，遇到需要打开H5页面后，针对不同环境进行差异化访问埋点（如在微信中、在嵌入的客户端中埋不同的点）的需求。这里选择使用友盟cnzz来进行代码埋点和数据追踪统计，现在把遇到的坑和解决方案记录下来供大家参考。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;基本配置&quot;&gt;&lt;a href=&quot;#基本配置&quot; class=&quot;headerlink&quot; title=&quot;基本配置&quot;&gt;&lt;/a&gt;基本配置&lt;/h3&gt;&lt;p&gt;友盟cnzz封装&lt;code&gt;umeng.js&lt;/code&gt;&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; umId = &lt;span class=&quot;number&quot;&gt;1234567890&lt;/span&gt;;&lt;span class=&quot;comment&quot;&gt;//这里填你的siteId&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; umScript = &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.createElement(&lt;span class=&quot;string&quot;&gt;&#39;script&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;umScript.src = &lt;span class=&quot;string&quot;&gt;&#39;https://s95.cnzz.com/z_stat.php?id=&#39;&lt;/span&gt; + umId + &lt;span class=&quot;string&quot;&gt;&#39;&amp;amp;web_id=&#39;&lt;/span&gt; + umId;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;umScript.setAttribute(&lt;span class=&quot;string&quot;&gt;&#39;language&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;JavaScript&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.head.appendChild(umScript);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; _czc = [];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;umScript.onload = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;//声明_czc对象&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; _czc = _czc || [];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;//绑定siteid&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  _czc.push([&lt;span class=&quot;string&quot;&gt;&quot;_setAccount&quot;&lt;/span&gt;, umId]);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;/* ... */&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
     
     </summary>
     
