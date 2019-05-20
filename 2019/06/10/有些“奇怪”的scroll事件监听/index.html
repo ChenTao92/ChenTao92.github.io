@@ -100,7 +100,7 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/873fcdb7ly1g37lz1s9yhj20ay09x41y.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/873fcdb7gy1g37mernj0nj21dc106do0.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/873fcdb7gy1g37mmkyxwyj220o122wl5.jpg">
-<meta property="og:updated_time" content="2019-05-20T07:25:30.126Z">
+<meta property="og:updated_time" content="2019-05-20T08:48:11.058Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="有些“奇怪”的scroll事件监听">
 <meta name="twitter:description" content="前言 在前端开发的过程中，对事件做监听是最平常不过了，最近在一个H5项目中监听scroll滚动事件的时候，发现居然有一个奇怪的问题，经过一番查找，总算找到原因，这里总结一下以供大家参考。    问题简述123456&amp;lt;body&amp;gt;    &amp;lt;div class=&quot;app&quot;&amp;gt;        &amp;lt;div class=&quot;home&quot;&amp;gt;        &amp;lt;/div&amp;gt;">
@@ -461,7 +461,7 @@
 <p>scroll事件是触发在<code>&lt;div class=&quot;home&quot;&gt;&lt;/div&gt;</code>上，由于scroll事件的不会发生事件冒泡（event bubbling），所以我们自然不会在window上面监听到scroll事件，而在注册事件时传入第三个参数<code>useCapture</code>，并将这个参数设为<code>true</code>时，会让事件监听器在捕获事件流工作，从而在最上方的window对象上就捕获和监听到事件。  </p>
 </blockquote>
 <h2 id="验证和改进"><a href="#验证和改进" class="headerlink" title="验证和改进"></a>验证和改进</h2><p>对于前面提到的DOM结构，因为对应的css是：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.home</span> &#123;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">overflow-y</span>: auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>实际上scroll事件是发生在<code>&lt;div class=&quot;home&quot;&gt;</code>内，所以对监听器修改成：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.querySelector(<span class="string">".home"</span>).addEventListener(<span class="string">'scroll'</span>, <span class="keyword">this</span>.scrollHandle);</div></pre></td></tr></table></figure></p>
+<p>实际上scroll事件是发生在<code>&lt;div class=&quot;home&quot;&gt;</code>内，而非滚动了整个页面，所以对监听器修改成：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.querySelector(<span class="string">".home"</span>).addEventListener(<span class="string">'scroll'</span>, <span class="keyword">this</span>.scrollHandle);</div></pre></td></tr></table></figure></p>
 <p>就可以使得监听器正常工作了，或者我们配置<code>capture参数</code>的值为<code>true</code>，指定监听器使用捕获事件流：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'scroll'</span>, <span class="keyword">this</span>.scrollHandle, <span class="literal">true</span>);</div></pre></td></tr></table></figure></p>
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="0" height="0" src="http://music.163.com/outchain/player?type=2&id=28387594&auto=0&height=0"></iframe><br><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="https://music.163.com/outchain/player?type=2&id=28387594&auto=1&height=66"></iframe>
 
