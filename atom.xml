@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://taylor-chan.github.io/"/>
-  <updated>2019-05-16T11:54:48.609Z</updated>
+  <updated>2019-05-20T07:13:11.865Z</updated>
   <id>https://taylor-chan.github.io/</id>
   
   <author>
@@ -14,6 +14,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>有些“奇怪”的scroll事件监听</title>
+    <link href="https://taylor-chan.github.io/2019/06/10/%E6%9C%89%E4%BA%9B%E2%80%9C%E5%A5%87%E6%80%AA%E2%80%9D%E7%9A%84scroll%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC/"/>
+    <id>https://taylor-chan.github.io/2019/06/10/有些“奇怪”的scroll事件监听/</id>
+    <published>2019-06-10T07:20:35.000Z</published>
+    <updated>2019-05-20T07:13:11.865Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>在前端开发的过程中，对事件做监听是最平常不过了，最近在一个H5项目中监听scroll滚动事件的时候，发现居然有一个奇怪的问题，经过一番查找，总算找到原因，这里总结一下以供大家参考。  </p>
+</blockquote>
+<h2 id="问题简述"><a href="#问题简述" class="headerlink" title="问题简述"></a>问题简述</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"app"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"home"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.home</span> &#123;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">overflow-y</span>: auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'scroll'</span>, <span class="keyword">this</span>.scrollHandle);</div><div class="line"><span class="string">``</span><span class="string">`  </span></div><div class="line">在这样一个DOM结构中，我们在window对象上监听页面的滚动事件，但实际上滚动并未触发`scrollHandle<span class="string">`函数，也就是说没有监听到滚动事件，这里不禁让人有些奇怪了，然鹅，当我们添加第三个参数为true的时候，却又可以正常监听到滚动事件了，究竟是什么原因呢？这便是今天本文要讲述的问题了。</span></div><div class="line">`<span class="string">``</span>javascript</div><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'scroll'</span>, <span class="keyword">this</span>.scrollHandle，<span class="literal">true</span>);</div><div class="line"><span class="string">``</span><span class="string">` </span></div><div class="line">这里，我们先来了解一下事件流、事件捕获以及事件冒泡。  </div><div class="line"></div><div class="line">## 事件流、事件捕获、事件冒泡  </div><div class="line">事件流的起源：在浏览器发展到第四代的时候，浏览器开发团队遇到一个问题：页面的哪一部分会拥有某个特定的事件？要明白这个问题问的是什么，可以想象画在一张纸上的一组同心圆。如果你把手指放在圆心上，那么你的手指指向的不是一个圆，而是纸上的所有圆。也就是说如果单击了页面的某个按钮，同时也单击了按钮的容器元素，甚至单击了整个页面。不过呢，IE提出的是***冒泡流（bubble）***，而网景提出的是***捕获流（capture）***。  </div><div class="line">![](http://ww1.sinaimg.cn/large/873fcdb7ly1g37lz1s9yhj20ay09x41y.jpg)  </div><div class="line">- 后来在W3C组织的统一之下，JS支持了冒泡流和捕获流。</div><div class="line">- 总结就是：先捕获，后冒泡，捕获从上到下，冒泡从下到上（形象点说法：捕获像石头沉入海底，冒泡则像气泡冒出水面）。</div><div class="line">- ***默认情况下，事件监听器使用冒泡事件流，不使用捕获事件流***。然而，你可以显式的指定使用捕获事件流，方法是在注册事件时传入第三个参数`useCapture<span class="string">`参数，将这个参数设为`</span><span class="literal">true</span><span class="string">`。  </span></div><div class="line">![](http://ww1.sinaimg.cn/large/873fcdb7gy1g37mernj0nj21dc106do0.jpg)  </div><div class="line"></div><div class="line">## 具体到scroll事件呢？  </div><div class="line">前面我们提到了事件有捕获流（自上而下）和冒泡流（自下而上），但是我们进一步查阅资料发现，scroll事件有些特殊，在绝大多数浏览器上，[***scroll事件是不会发生事件冒泡（Event bubbling）***](https://www.quirksmode.org/dom/events/scroll.html) 的。  </div><div class="line">![](http://ww1.sinaimg.cn/large/873fcdb7gy1g37mmkyxwyj220o122wl5.jpg)  </div><div class="line">所以，这样出现前面现象，原因就好解释了。  </div><div class="line">&gt; scroll事件是触发在`&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"home"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><span class="string">`上，由于scroll事件的不会发生事件冒泡（event bubbling），所以我们自然不会在window上面监听到scroll事件，而在注册事件时传入第三个参数`</span>useCapture<span class="string">`，并将这个参数设为`</span><span class="literal">true</span><span class="string">`时，会让事件监听器在捕获事件流工作，从而在最上方的window对象上就捕获和监听到事件。  </span></div><div class="line"></div><div class="line">## 验证和改进  </div><div class="line">对于前面提到的DOM结构，因为对应的css是：  </div><div class="line">`<span class="string">``</span>css</div><div class="line">.home &#123;</div><div class="line">    <span class="attr">height</span>: <span class="number">100</span>%;</div><div class="line">    overflow-y: auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>实际上scroll事件是发生在<code>&lt;div class=&quot;home&quot;&gt;</code>内，所以对监听器修改成：  </p>
+<pre><code class="javascript"><span class="built_in">document</span>.querySelector(<span class="string">".home"</span>).addEventListener(<span class="string">'scroll'</span>, <span class="keyword">this</span>.scrollHandle);
+</code></pre>
+<p>就可以使得监听器正常工作了，或者我们配置<code>capture参数</code>的值为<code>true</code>，指定监听器使用捕获事件流：  </p>
+<pre><code class="javascript"><span class="built_in">window</span>.addEventListener(<span class="string">'scroll'</span>, <span class="keyword">this</span>.scrollHandle, <span class="literal">true</span>);
+</code></pre>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="0" height="0" src="http://music.163.com/outchain/player?type=2&id=28387594&auto=0&height=0"></iframe><br><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="https://music.163.com/outchain/player?type=2&id=28387594&auto=1&height=66"></iframe>
+
+<!-- >最近访客
+
+<div class="ds-recent-visitors" data-num-items="28" data-avatar-size="42" id="ds-recent-visitors"></div>
+<br> -->]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;在前端开发的过程中，对事件做监听是最平常不过了，最近在一个H5项目中监听scroll滚动事件的时候，发现居然有一个
+    
+    </summary>
+    
+      <category term="JS" scheme="https://taylor-chan.github.io/categories/JS/"/>
+    
+    
+      <category term="scroll" scheme="https://taylor-chan.github.io/tags/scroll/"/>
+    
+      <category term="事件冒泡" scheme="https://taylor-chan.github.io/tags/%E4%BA%8B%E4%BB%B6%E5%86%92%E6%B3%A1/"/>
+    
+      <category term="事件捕获" scheme="https://taylor-chan.github.io/tags/%E4%BA%8B%E4%BB%B6%E6%8D%95%E8%8E%B7/"/>
+    
+  </entry>
   
   <entry>
     <title>网站埋点统计实现原理简述</title>
@@ -80,7 +124,7 @@
     <link href="https://taylor-chan.github.io/2019/05/16/%E5%8F%8B%E7%9B%9Fcnzz%E5%9F%8B%E7%82%B9%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0/"/>
     <id>https://taylor-chan.github.io/2019/05/16/友盟cnzz埋点踩坑小记/</id>
     <published>2019-05-16T07:08:39.000Z</published>
-    <updated>2019-05-16T11:55:08.085Z</updated>
+    <updated>2019-05-20T07:13:21.937Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
 <p>在近期的一个<code>Vue+Webpack</code>前端项目中，遇到需要打开H5页面后，针对不同环境进行差异化访问埋点（如在微信中、在嵌入的客户端中埋不同的点）的需求。这里选择使用友盟cnzz来进行代码埋点和数据追踪统计，现在把遇到的坑和解决方案记录下来供大家参考。</p>
